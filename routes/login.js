@@ -67,7 +67,7 @@ passport.deserializeUser(function(user, done) {
 
 // Register API
 router.post('/register', (req, res) => {
-    if (req.body.username && req.body.password) {
+    if (req.body.firstName && req.body.password) {
         User.findOne({ where: { email: req.body.username }, raw: false })
             .then((user) => {
                 if (user) {
